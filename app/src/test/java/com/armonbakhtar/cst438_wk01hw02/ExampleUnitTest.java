@@ -1,17 +1,31 @@
 package com.armonbakhtar.cst438_wk01hw02;
 
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
+
 public class ExampleUnitTest {
+
+    ArrayList<Users> userTest = new ArrayList<>();
+
+    @Before
+    public void test(){
+        userTest.add(new Users("admin", "admin", 123));
+    }
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void verifyUser(){
+        assertNotNull(MainActivity.verifyUser("admin", userTest));
+        assertNull(MainActivity.verifyUser("stewart", userTest));
+    }
+
+    @Test
+    public void verifyPass(){
+        assertTrue(MainActivity.verifyPass("admin", userTest.get(0)));
+        assertFalse(MainActivity.verifyPass("yerr", userTest.get(0)));
     }
 }
