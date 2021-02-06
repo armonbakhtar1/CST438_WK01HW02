@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etUsername;
     private EditText etPassword;
-    private Button login;
     private ArrayList<Users> users = new ArrayList<>();
 
     @Override
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         etUsername = findViewById(R.id.username);
         etPassword = findViewById(R.id.password);
-        login = findViewById(R.id.button);
+        Button login = findViewById(R.id.button);
 
         login.setOnClickListener(v -> {
             String userInput = etUsername.getText().toString();
