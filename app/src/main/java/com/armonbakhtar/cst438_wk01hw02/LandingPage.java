@@ -21,7 +21,6 @@ public class LandingPage extends AppCompatActivity {
     private TextView textViewResult;
     private int id;
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
